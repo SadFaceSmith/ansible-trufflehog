@@ -30,7 +30,7 @@ Including an example of how to use your role (for instance, with variables passe
     connection: local
     become: no
     roles:
-      - ansible-trufflehog
+      - sadfacesmith.ansible_trufflehog
 ```      
 
 Author Information

@@ -30,7 +30,7 @@
   when:  org_scan.stdout exists
 
   - name: Create Repo "{{ repo }}" results file
-  copy:
-    dest: "/tmp/trufflehog/{{ repo }}/{{ repo }}-results.txt"
-    content: "{{ repo_scan.stdout }}"
-  when:  repo_scan.stdout exists
+    copy:
+      dest: "/tmp/trufflehog/{{ repo }}/{{ repo }}-results.txt"
+      content: "{{ repo_scan.stdout }}"
+    when:  repo_scan.stdout exists
