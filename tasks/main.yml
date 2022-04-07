@@ -5,7 +5,7 @@
     dest: "{{ playbook_dir }}"
     remote_src: true
 
- - name: Create Results dir
+- name: Create Results dir
   ansible.builtin.file:
     path: "/tmp/trufflehog-results/{{ item }}"
     state: directory
