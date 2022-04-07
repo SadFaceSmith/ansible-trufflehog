@@ -12,9 +12,9 @@ Requirements
 Role Variables
 --------------
 
-|Variable   |Required   |Example   |Description   |   |
-|---|---|---|---|---|
-|repo   |Yes   |grafana/loki   |Which repository to scan. In owner/repo format   |   |
+|Variable   |Required   |Example   |Description   |   
+|---|---|---|---
+|repo   |Yes   |grafana/loki   |Which repository to scan. In owner/repo format   |  
 
 
 
