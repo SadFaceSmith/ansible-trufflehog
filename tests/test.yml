@@ -2,6 +2,7 @@
   - name: Trufflehog automated scanning
     hosts: localhost
     connection: local
+    gather_facts: no
     become: no
     roles:
-      - ansible-trufflehog
+      - sadfacesmith.ansible_trufflehog

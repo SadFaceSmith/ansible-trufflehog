@@ -27,6 +27,7 @@ Including an example of how to use your role (for instance, with variables passe
   - name: Trufflehog automated scanning
     hosts: localhost
     connection: local
+    gather_facts: no
     become: no
     roles:
       - sadfacesmith.ansible_trufflehog
