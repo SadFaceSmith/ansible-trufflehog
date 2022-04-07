@@ -4,20 +4,21 @@
     src: https://github.com/trufflesecurity/trufflehog/releases/download/v3.0.5/trufflehog_3.0.5_linux_amd64.tar.gz
     dest: "{{ playbook_dir }}"
     remote_src: true
- 
+
+ - name: Create Results dir
+  ansible.builtin.file:
+    path: "/tmp/trufflehog-results/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - "{{ repo }}"
+
 - name: Scan "{{ repo }}" Github Repo
   ansible.builtin.command: "{{ playbook_dir }}/trufflehog github --repo={{ repo }}"
   when: repo is defined
   register: repo_scan
   ignore_errors: true
 
-- name: Create Results dir
-  ansible.builtin.file:
-    path: "/tmp/trufflehog/{{ item }}"
-    state: directory
-    mode: '0755'
-  loop:
-    - "{{ repo }}"
 
 - name: Create Repo "{{ repo }}" results file
   copy:
