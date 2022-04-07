@@ -16,7 +16,7 @@ Role Variables
 |---|---|---|---|---|
 |org   |No   |Github Organization to scan   |grafana   |   |
 |repo  |No  |Github Repo to scan   | loki  |   |
-|   |   |   |   |   |
+
 
 
 Example Playbook
