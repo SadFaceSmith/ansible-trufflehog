@@ -18,6 +18,7 @@
   when: repo is defined
   register: repo_scan
   ignore_errors: true
+  no_log: true
 
 
 - name: Create Repo "{{ repo }}" results file
