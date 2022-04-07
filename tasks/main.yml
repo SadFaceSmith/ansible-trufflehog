@@ -6,31 +6,36 @@
     remote_src: true
 
       
-- name: Scan "{{ org }}" Github Org
-  ansible.builtin.command: "./{{ playbook_dir }}/trufflehog github --org={{ org }}"
-  when: org is defined
-  register: org_scan
+    #- name: Scan "{{ org }}" Github Org
+    #ansible.builtin.command: "{{ playbook_dir }}/trufflehog github --org={{ org }}"
+    #when: org is defined
+    #register: org_scan
 
 
 - name: Scan "{{ repo }}" Github Repo
-  ansible.builtin.command: "./{{ playbook_dir }}/trufflehog github --repo={{ repo }}"
+  ansible.builtin.command: "{{ playbook_dir }}/trufflehog github --repo=https://github.com/{{ repo }}"
   when: repo is defined
   register: repo_scan
+  ignore_errors: true
+
 
 - name: Create Results dir
   ansible.builtin.file:
-    path: /tmp/trufflehog
+    path: "/tmp/trufflehog/{{ item }}"
     state: directory
     mode: '0755'
+  loop:
+    - "{{ repo }}"
 
-- name: Create Org "{{ org }}" results file
-  copy:
-    dest: "/tmp/trufflehog/{{ org }}/{{ org }}-results.txt"
-    content: "{{ org_scan.stdout }}"
-  when:  org_scan.stdout exists
+
+    #- name: Create Org "{{ org }}" results file
+    #copy:
+    # dest: "/tmp/trufflehog/{{ org }}/{{ org }}-results.txt"
+    #content: "{{ org_scan.stdout }}"
+    #when:  org_scan.stdout exists
 
 - name: Create Repo "{{ repo }}" results file
   copy:
-    dest: "/tmp/trufflehog/{{ repo }}/{{ repo }}-results.txt"
+    dest: "/tmp/trufflehog/{{ repo }}/results.txt"
     content: "{{ repo_scan.stdout }}"
-  when:  repo_scan.stdout exists
+  when:  repo_scan.stdout is defined
