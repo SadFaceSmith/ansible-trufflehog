@@ -16,7 +16,9 @@ Role Variables
 |---|---|---|---
 |repo   |Yes   |grafana/loki   |Which repository to scan. In owner/repo format   |  
 
-
+Installation
+---------------
+`ansible-galaxy install sadfacesmith.ansible_trufflehog`
 
 Example Playbook
 ----------------
