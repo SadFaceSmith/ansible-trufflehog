@@ -14,7 +14,7 @@
     - "{{ repo }}"
 
 - name: Scan "{{ repo }}" Github Repo
-  ansible.builtin.command: "{{ playbook_dir }}/trufflehog github --repo={{ repo }}"
+  ansible.builtin.command: "{{ playbook_dir }}/trufflehog github --repo=https://github.com/{{ repo }}"
   when: repo is defined
   register: repo_scan
   ignore_errors: true
