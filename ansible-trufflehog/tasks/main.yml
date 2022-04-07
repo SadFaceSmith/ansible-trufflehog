@@ -1,0 +1,17 @@
+
+- name: Unarchive trufflehog tarball
+  ansible.builtin.unarchive:
+    src: https://github.com/trufflesecurity/trufflehog/releases/download/v3.0.5/trufflehog_3.0.5_linux_amd64.tar.gz
+    dest: "{{ playbook_dir }}"
+    remote_src: true
+
+      
+- name: Scan "{{ org }}" Github Org
+  command: "./{{ playbook_dir }}/trufflehog github --org={{ org }}"
+  when: org is defined
+
+- name: Scan "{{ repo }}" Github Repo
+  command: "./{{ playbook_dir }}/trufflehog github --repo={{ repo }}"
+  when: repo is defined
+
+  

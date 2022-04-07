@@ -1,0 +1,7 @@
+---
+  - name: Trufflehog automated scanning
+    hosts: localhost
+    connection: local
+    become: no
+    roles:
+      - ansible-trufflehog

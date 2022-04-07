@@ -1,0 +1,4 @@
+---
+# vars file for ansible-trufflehog
+org: grafana
+repo: grafana
