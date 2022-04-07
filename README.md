@@ -1,4 +1,4 @@
-Role Name
+ansible_trufflehog
 =========
 
 Automated GitHub scanning with [trufflehog](https://github.com/trufflesecurity/trufflehog)
@@ -14,8 +14,8 @@ Role Variables
 
 | Variable  | Required  |Description   | Example   |   |
 |---|---|---|---|---|
-|org   |No   |Github Organization to scan   |grafana   |   |
-|repo  |No  |Github Repo to scan   | loki  |   |
+|
+|repo  |yes  |Github Repo to scan   | grafana/loki  |   |
 
 
 
