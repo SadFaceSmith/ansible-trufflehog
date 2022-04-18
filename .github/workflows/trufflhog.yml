@@ -1,2 +1,7 @@
-- name: TruffleHog OSS
-  uses: trufflesecurity/trufflehog@v3.3.3
+on
+  pull_request:
+    branches:
+      - main
+
+  - name: TruffleHog OSS
+    uses: trufflesecurity/trufflehog@v3.3.3 
