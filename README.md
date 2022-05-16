@@ -1,3 +1,5 @@
+[![.github/workflows/trufflehog.yml](https://github.com/SadFaceSmith/ansible-trufflehog/actions/workflows/trufflehog.yml/badge.svg)](https://github.com/SadFaceSmith/ansible-trufflehog/actions/workflows/trufflehog.yml)
+
 ansible_trufflehog
 =========
 
