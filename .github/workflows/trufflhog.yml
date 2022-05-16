@@ -1,5 +1,6 @@
-on
+on:
   release:
+    types: [edited]
   pull_request:
     branches:
       - main
@@ -13,4 +14,4 @@ steps:
 - uses: actions/upload-artifact@v3
   with:
     name: my-artifact
-    path: path/to/artifact/world.txt
+    path: path/to/artifact/world.txtd.txt
